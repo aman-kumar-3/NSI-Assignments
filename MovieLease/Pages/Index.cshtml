@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Admin Dashboard</h1>
+        <div>
+            <a asp-page="/Admin/Movies/Index">Movies List</a>
+        </div>
+        <div>
+            <a asp-page="/Admin/Users/Index">User List</a>
+        </div>
+        <div>
+            <a asp-page="/Admin/Records/Defaulters">List of Users which don't Returend Videos Yet</a>
+        </div>
+        <div>
+            <a asp-page="/Admin/Records/Returned">List of Users which Which Retruned Videos Yet</a>
+        </div>
+
+    </div>

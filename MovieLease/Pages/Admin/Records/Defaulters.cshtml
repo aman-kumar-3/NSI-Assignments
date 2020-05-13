@@ -1,0 +1,49 @@
+﻿@page
+@model MovieLease.Pages.Admin.Records.DefaultersModel
+@{
+    ViewData["Title"] = "Defaulters";
+}
+
+<h1>List of Movies Not Returned Yet</h1>
+
+    <div>
+        <a class="btn btn-primary" asp-page="/Index">Back</a>
+    </div>
+
+<div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Movie Name</th>
+                        <th>User Name</th>
+                        <th>Lend Date</th>
+                        <th>Return Date</th>
+                        <th>Status</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var record in Model.Records)
+                    {
+                        <tr>
+                            <td>@record.Movie.MovieName</td>
+                            <td>@record.User.UserName</td>
+                            <td>@record.LendDate.ToShortDateString()</td>
+                            <td>@record.ReturnDate.ToShortDateString()</td>
+                            <td>@record.Status</td>
+                            
+                        </tr>
+                    }
+                </tbody>
+
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+

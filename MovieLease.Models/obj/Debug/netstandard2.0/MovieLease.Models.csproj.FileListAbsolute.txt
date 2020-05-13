@@ -1,0 +1,9 @@
+F:\AspNetAssignments\AssignmentNet\MovieLease.Models\bin\Debug\netstandard2.0\MovieLease.Models.deps.json
+F:\AspNetAssignments\AssignmentNet\MovieLease.Models\bin\Debug\netstandard2.0\MovieLease.Models.dll
+F:\AspNetAssignments\AssignmentNet\MovieLease.Models\obj\Debug\netstandard2.0\MovieLease.Models.csprojAssemblyReference.cache
+F:\AspNetAssignments\AssignmentNet\MovieLease.Models\obj\Debug\netstandard2.0\MovieLease.Models.AssemblyInfoInputs.cache
+F:\AspNetAssignments\AssignmentNet\MovieLease.Models\obj\Debug\netstandard2.0\MovieLease.Models.AssemblyInfo.cs
+F:\AspNetAssignments\AssignmentNet\MovieLease.Models\bin\Debug\netstandard2.0\MovieLease.Models.pdb
+F:\AspNetAssignments\AssignmentNet\MovieLease.Models\obj\Debug\netstandard2.0\MovieLease.Models.csproj.CoreCompileInputs.cache
+F:\AspNetAssignments\AssignmentNet\MovieLease.Models\obj\Debug\netstandard2.0\MovieLease.Models.dll
+F:\AspNetAssignments\AssignmentNet\MovieLease.Models\obj\Debug\netstandard2.0\MovieLease.Models.pdb

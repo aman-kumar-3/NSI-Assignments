@@ -1,0 +1,35 @@
+﻿@page
+@model MovieLease.Pages.Movies.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Movies Available</h1>
+<div class="card-deck">
+    @foreach (var movie in Model.Movies)
+    {
+        
+        <div class="card m-3" style="min-width:18rem;max-width:30.5%">
+            <div class="card-header">
+                <h3>@movie.MovieName</h3>
+            </div>
+            <div class="card-body">
+                <h5>Director:</h5><p>@movie.Director</p>
+                <h6>Description</h6>
+                <p>@movie.Description</p>
+                <h6>Price:@movie.Price</h6>
+            </div>
+            <div class="card-footer">
+                
+    <form method="post">
+        <a asp-page="./OrderRecord" type="submit" asp-route-ID="@movie.MovieId" class="btn btn-primary">Order</a>
+    </form>
+
+
+            </div>
+          
+           
+        </div>
+    }
+    </div>
+

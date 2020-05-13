@@ -1,0 +1,49 @@
+﻿@page
+@model MovieLease.Pages.Users.ReturnModel
+@{
+    ViewData["Title"] = "Return";
+}
+
+<h1>Return</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5>@Model.LendRecord.Movie.MovieName</h5>
+                    <p>Price: @Model.LendRecord.Movie.Price</p>
+                    <p>Return Date: @Model.LendRecord.ReturnDate.ToShortDateString()</p>
+
+                    <p>Actual Return Date: @System.DateTime.Now.ToShortDateString()</p>
+
+                    @{ int days;
+                        DateTime currentdate = System.DateTime.Now;
+                        days = (currentdate - Model.LendRecord.ReturnDate).Days;
+                    }
+
+                    @if (days > 0)
+                    {
+                        int fine = Model.LendRecord.Movie.Price + 100;
+                        <p>Price with Fine Included: @fine </p>
+                    }
+                    else
+                    {
+                        <p>Price With Fine Inlcuded: @Model.LendRecord.Fine</p>
+                        
+                    }
+                    <div>
+                        
+                        <form method="post">
+                            <button class="btn btn-primary">Return</button>
+                            <a class="btn btn-primary" asp-page="/Users/Index">Cancel</a>
+                        </form>
+                        
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

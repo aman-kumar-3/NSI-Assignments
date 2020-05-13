@@ -1,0 +1,70 @@
+﻿@page 
+@model MovieLease.Pages.Users.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>User Dashboard</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">UserName: @Model.User.UserName</h5>
+                    <p class="card-text">Email: @Model.User.Email</p>
+                    <p class="card-text">Password: @Model.User.Password</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 mx-auto ">
+            <form method="post">
+                <button class="btn-primary mb-3">Log Out</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-6 mx-auto">
+            @if(Model.RecordsOfUser==null)
+            {
+                <div class="row">
+                    <div class="col">
+                        <h6>Not Movies Yet</h6>
+                    </div>
+
+                </div>
+            }
+            else
+            { 
+            @foreach(var record in Model.RecordsOfUser)
+            {
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5>Movie Rented: @record.Movie.MovieName</h5>
+                        <p><strong>Lend Date:</strong> @record.LendDate.ToShortDateString()&nbsp;&nbsp;<strong>Return Date:</strong> @record.ReturnDate.ToShortDateString()</p>
+                        <p>Price: @record.Movie.Price</p>
+                        <p>Return Date: @record.ReturnDate.ToShortDateString()</p>
+
+                        @if (record.Status == "Not Returned")
+                        {
+                            <a asp-page="/Users/Return" class="btn btn-primary" asp-route-ID="@record.RecordId">Return</a>
+                        }
+                        else
+                        {
+                            <h5>The Video is Already Returned</h5>
+
+                        }
+
+                    </div>
+                </div>
+            }
+            }
+
+        </div>
+    </div>
+</div>
+
+
